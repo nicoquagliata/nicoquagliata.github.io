@@ -25,12 +25,29 @@ class VRButton{
     }
 
 	showEnterVR( button ) {
+
+        let currentSession = null
+
         this.stylizeElement(button, true, 30, true)
         button.style.display = ''
         button.style.right = '20px'
         button.style.width = '80px'
         button.style.cursor = 'pointer'
         button.innerHTML = '<i class="fas fa-vr-cardboard"></i>'
+
+        button.onmouseenter = function(){
+            button.style.fontSize = '12px'
+            button.textContent = (currentSession === null) ? 'ENTER VR' : 'EXIT VR'
+            button.style.opacity = '1'
+
+        }
+
+        button.onmouseleave = function(){
+            button.style.fontSize = '30px'
+            button.innerHTML = '<i class="fas fa-vr-cardboard"></i>'
+            button.style.opacity = '0.5'
+
+        }
 
     }
 
