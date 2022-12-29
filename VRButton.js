@@ -79,20 +79,28 @@ class VRButton{
 
         const self = this
 
-        function onSessionStarted(session) {
-            session.addEventListener('end', onSessionEnded)
-            self.renderer.xr.setSession( session)
-            self.stylizeElement( button, false, 12, true)
-            button.textContent = 'EXIT VR'
-            currentSession = session
+        function onSessionStarted( session ) {
+
+            session.addEventListener( 'end', onSessionEnded );
+
+            self.renderer.xr.setSession( session );
+            self.stylizeElement( button, false, 12, true );
+            
+            button.textContent = 'EXIT VR';
+
+            currentSession = session;
+
         }
 
-        function onSessionEnded() {
-            currentSession.removeEventListener('end', onSessionEnded)
-            self.stylizeElement( button, true, 12, true)
-            button.textContent = 'ENTER VR'
+        function onSessionEnded( ) {
 
-            currentSession = null
+            currentSession.removeEventListener( 'end', onSessionEnded );
+
+            self.stylizeElement( button, true, 12, true );
+            button.textContent = 'ENTER VR';
+
+            currentSession = null;
+
         }
 
         button.onclick = function(){
