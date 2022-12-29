@@ -15,7 +15,7 @@ class VRButton{
             button.style.height = '40px'
             document.body.appendChild( button )
 
-            navigator.xr.isSessionSupported('immersive-vr').then((supported)=>{
+            navigator.xr.isSessionSupported('immersive-vrX').then((supported)=>{
                 supported ? this.showEnterVR(button) : this.showWebXRNotFound(button)
             })
 		} else {
@@ -41,7 +41,17 @@ class VRButton{
     }
 
     showWebXRNotFound( button ) { 
-    
+        this.stylizeElement(button, false)
+        this.disableButton(button)
+        button.style.display = ''
+        button.style.width = '100%'
+        button.style.right = '0px'
+        button.style.bottom = '0px'
+        button.style.border = ''
+        button.style.opacity = '1'
+        button.style.fontSize = '13px'
+        button.textContent = 'VR NOT SUPPORTED'
+
     }
 
     stylizeElement( element, green = true, fontSize = 13, ignorePadding = false ) {
