@@ -30,6 +30,13 @@ class VRButton{
 
             message.style.left = '0px'
             message.style.width = '100%'
+            message.style.textDecoration = 'none'
+
+            this.stylizeElement(message, false)
+            message.style.bottom = '0px'
+            message.style.opacity = '1'
+
+            document.body.appendChild(message)
 		}
 
     }
