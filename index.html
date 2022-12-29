@@ -4,4 +4,12 @@
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages. bla bla</p>
 </body>
+<script type="module">
+    import { App } from './app.js';
+
+    document.addEventListener("DOMContentLoaded", function(){
+        const app = new App();
+        window.app = app;
+    });
+</script>
 </html>
