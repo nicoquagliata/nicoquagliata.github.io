@@ -19,7 +19,17 @@ class VRButton{
                 supported ? this.showEnterVR(button) : this.showWebXRNotFound(button)
             })
 		} else {
-            
+            const message = document.createElement('a')
+            if(window.isSecureContext === false){
+                message.href = document.location.href.replace(/^http:/, 'https:')
+                message.innerHTML = 'WEBXR needs HTTPS'
+            } else {
+                message.href = 'https://immersive.dev'
+                message.innerHTML = 'WEBXR NOT AVAILABLE'
+            }
+
+            message.style.left = '0px'
+            message.style.width = '100%'
 		}
 
     }
@@ -47,6 +57,35 @@ class VRButton{
             button.innerHTML = '<i class="fas fa-vr-cardboard"></i>'
             button.style.opacity = '0.5'
 
+        }
+
+        const self = this
+
+        function onSessionStarted(session) {
+            session.addEventListener('end', onSessionEnded)
+            self.renderer.xr.setSession( session)
+            self.stylizeElement( button, false, 12, true)
+            button.textContent = 'EXIT VR'
+            currentSession = session
+        }
+
+        function onSessionEnded() {
+            currentSession.removeEventListener('end', onSessionEnded)
+            self.stylizeElement( button, true, 12, true)
+            button.textContent = 'ENTER VR'
+
+            currentSession = null
+        }
+
+        button.onclick = function(){
+            if(currentSession===null){
+                const sessionInit = {
+                    optionalFeatures: ['local-floor', 'bounded-floor']
+                }
+                navigator.xr.requestSession('immersive-vr', sessionInit).then(onSessionStarted)
+            } else {
+                currentSession.end()
+            }
         }
 
     }
