@@ -66,7 +66,7 @@ class VRButton{
         button.onmouseenter = function(){
             button.style.fontSize = '12px'
             button.textContent = (currentSession === null) ? 'ENTER VR' : 'EXIT VR'
-            button.style.opacity = '1'
+            button.style.opacity = '1.0'
 
         }
 
