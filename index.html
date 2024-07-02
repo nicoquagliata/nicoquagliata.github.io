@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>WebXR nq</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-        <!--favicon -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
-        <!-- end favicon -->
-        <style>
-            body{
-                margin: 0;
-                padding: 0;
-            }
-        </style>
-	</head>
-<body>
-    <script src="./libs/fas.js"></script>
-
-    <script type="module">
-        import { App } from './app.js';
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corona Peso Pluma</title>
     
-        document.addEventListener("DOMContentLoaded", function(){
-            const app = new App();
-            window.app = app;
-        });
-    </script>
-    </body>
+  <script type="module" crossorigin src="./assets/index-b74a7fa3.js"></script>
+  <link rel="stylesheet" href="./assets/index-a2fddf62.css">
+</head>
+<body>
+
+    <!-- <div id="videoContainer">
+        <video id='camerafeed' autoplay style="display:block;"></video>
+        
+    </div> -->
+    <div id="experienceContainer">
+        <video id='videoTag' style="display:none;" playsinline>
+            <source src="./videos/01.mp4" type="video/mp4" />
+            <!-- <source src="/videos/test/test02.ogv" type="video/ogv" /> -->
+        </video>
+        <video id='videoAR' style="display:none;" playsinline preload="auto">
+            <source src="./videos/03.mp4" type="video/mp4" />
+        </video>
+        <canvas class="experienceContainer"></canvas>
+    </div>
+    
+</body>
 </html>
