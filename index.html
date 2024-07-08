@@ -4,26 +4,181 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corona Peso Pluma</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <link href="https://use.typekit.net/zlb8ghb.css" rel="stylesheet"> <!-- Title Hotspot-->
+
     
-  <script type="module" crossorigin src="./assets/index-b74a7fa3.js"></script>
-  <link rel="stylesheet" href="./assets/index-a2fddf62.css">
+  <script type="module" crossorigin src="./assets/index-0268499e.js"></script>
+  <link rel="stylesheet" href="./assets/index-787e2ea7.css">
 </head>
 <body>
 
-    <!-- <div id="videoContainer">
-        <video id='camerafeed' autoplay style="display:block;"></video>
-        
-    </div> -->
-    <div id="experienceContainer">
-        <video id='videoTag' style="display:none;" playsinline>
-            <source src="./videos/01.mp4" type="video/mp4" />
-            <!-- <source src="/videos/test/test02.ogv" type="video/ogv" /> -->
-        </video>
+    <div id="sitePreloader" class="preloader">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <main id="experienceContainer" style="display: none;">
+
+        <a href="#" id="sound" class="sound sound--active">
+            <img src="./images/sound.svg" alt="" />
+        </a>
+
         <video id='videoAR' style="display:none;" playsinline preload="auto">
             <source src="./videos/03.mp4" type="video/mp4" />
         </video>
-        <canvas class="experienceContainer"></canvas>
-    </div>
+
+        <div id="webExperience">            
+        </div>
+        <canvas id="canvasXR" class="canvasXR">
+        </canvas>
+
+
+        <!-- begin Age Gate -->
+        <section id="ageGate" class="section age-gate">
+            <!-- Zoom Intro -->
+            <div class="age-gate__intro">
+                <img class="desktop" src="./images/intro.jpg" alt="" />
+                <img class="no-desktop" src="./images/intro_mobile.jpg" alt="" />
+            </div>
+
+            <div class="age-gate__console">
+                <div class="box">
+                    <h1 class="logo">
+                        <img src="./images/corona_pesopluma.svg" alt="Corona x Peso Pluma" />
+                    </h1>
+                    <p class="advice">You must be +21 to enter this site</p>
+                    
+                    <form class="form">
+                        <h2 class="form__title">Please enter your date of birth</h2>
+                        <div class="form__grid">
+                            <div class="form__group">
+                                <label for="month" class="sr-only">Month</label>
+                                <input class="form__control" type="number" id="month" placeholder="Month">
+                            </div>
+                            <div class="form__group">
+                                <label for="day" class="sr-only">Day</label>
+                                <input class="form__control" type="number" id="day" placeholder="Day">
+                            </div>
+                            <div class="form__group">
+                                <label for="year" class="sr-only">Year</label>
+                                <input class="form__control" type="number" id="year" placeholder="Year">
+                            </div>
+                        </div>
+                        <button id="ageGateButton" class="btn">Continue</button>
+                        <div id="ageGateMessage" class="form__error-message"></div>
+                    </form>
     
+                    <p class="legal">By entering this site, you are agreeing to our <a href="#" target="_blank">Terms & Conditions</a> and <a href="#" target="_blank">Privacy Policy</a>. Please do not share or forward to anyone underage. ©2024 Corona. All rights reserved.</p>
+                </div>
+            </div>
+        </section>
+        <!-- end Age Gate -->
+
+        <!-- begin Video Intro Desktop -->
+        <section id="videoIntroDesktop" class="section video-intro">
+            <video id='videoTagDesktop' playsinline>
+                <source src="./videos/01.mp4" type="video/mp4" />
+            </video>
+        </section>
+        <!-- end Video Intro Desktop -->
+
+        <!-- begin Desktop QR-->
+        <section id="qrDesktop" class="section qr-desktop">
+            <h1 class="logo">
+                <img src="./images/corona_pesopluma.svg" alt="Corona x Peso Pluma" />
+            </h1>
+
+            <div class="content">
+                <div class="content__phone">
+                    <video src="./videos/demo_360.mp4" autoplay muted loop></video>
+                </div>
+                <div class="content__text">
+                    <h2>Discover Peso Pluma's World in 360</h2>
+                    <p>Step into Peso Pluma's vibrant world like never before! Explore every angle in stunning 360-degree views, immersing yourself in the sights, sounds, and stories that make Peso Pluma unique.</p>
+                    <div class="qr">
+                        <div class="qr__image">
+                            <img src="./images/qr.svg" alt="Peso Pluma's World in 360" />
+                        </div>
+                        <div class="qr__text">Scan the QR code to explore<br>Peso Pluma's world in 360</div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="legal">&copy; Corona 2024. All rights reserved.</p>
+
+            <ul class="social">
+                <li>
+                    <a href="#">
+                        <img src="images/social/ig.svg" alt="Instagram" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/social/yt.svg" alt="YouTube" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/social/tt.svg" alt="TikTok" />
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- end Desktop QR -->
+
+        <!-- begin Data Form Mobile -->
+        <section id="dataFormMobile" class="section data-form">
+            <div class="box">
+                <h1 class="logo">
+                    <img src="./images/corona_pesopluma.svg" alt="Corona x Peso Pluma" />
+                </h1>                
+                <form class="form">
+                    <h2 class="form__title">Please complete the following data</h2>
+                    <div class="form__group">
+                        <label for="name" class="sr-only">Name</label>
+                        <input class="form__control" type="name" id="name" placeholder="Name">
+                    </div>
+                    <div class="form__group">
+                        <label for="email" class="sr-only">Day</label>
+                        <input class="form__control" type="email" id="email" placeholder="Email">
+                    </div>
+                    <button id="dataFormButton" class="btn">Continue</button>
+                    <div id="dataFormMessage" class="form__error-message"></div>
+                </form>
+            </div>
+        </section>
+        <!-- end Data Form Mobile -->
+
+        <section id="experience" class="section experience">
+
+        </section>
+
+        <div class="hotspot">
+            <!-- 
+                To Show Hotspot:
+                1. Add class hotspot--active to hotspot element
+                2. Wait 50ms (setTimeout)
+                3. Add class hotspot--show to hotspot element
+             -->
+            <a href="#" class="hotspot__close">
+                <span><img src="./images/hotspot/hotspot_close.svg" alt="Close" /></span>
+            </a>
+    
+            <div class="hotspot__content">
+                <div>
+                    <div class="hotspot__image">
+                        <img src="./images/hotspot/bobble_head.png" alt="" />
+                    </div>
+                    <h1 class="hotspot__title">Check the merch</h1>
+                    <p>Explore exclusive merchandise that captures the bold spirit of Peso Pluma.</p>
+                </div>
+                <button class="btn-solid">Discover</button>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

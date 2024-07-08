@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 257 530">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #7c7c7c;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #000;
+      }
+
+      .cls-4 {
+        mix-blend-mode: screen;
+        opacity: .8;
+      }
+
+      .cls-5 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g class="cls-5">
+    <g id="Capa_1" data-name="Capa 1">
+      <g class="cls-4">
+        <rect class="cls-1" y="472.9" width="4.2" height="3"/>
+      </g>
+      <g class="cls-4">
+        <rect class="cls-1" x="52.5" y="525.4" width="3.6" height="4.2"/>
+      </g>
+      <g class="cls-4">
+        <rect class="cls-1" x="252.9" y="53.7" width="4.2" height="3.6"/>
+      </g>
+      <g class="cls-4">
+        <rect class="cls-1" x="204" y="0" width="3.6" height="4.2"/>
+      </g>
+      <g class="cls-4">
+        <rect class="cls-1" x="252.9" y="472.3" width="4.2" height="3.6"/>
+      </g>
+      <g>
+        <path class="cls-2" d="M41.7,1h173.8c22.5,0,40.7,18.3,40.7,40.7v446.5c0,22.5-18.3,40.7-40.7,40.7H41.7c-22.5,0-40.7-18.3-40.7-40.7V41.7C1,19.3,19.3,1,41.7,1Z"/>
+        <path class="cls-3" d="M215.6,2c21.9,0,39.7,17.8,39.7,39.7v446.5c0,21.9-17.8,39.7-39.7,39.7H41.7c-21.9,0-39.7-17.8-39.7-39.7V41.7C2,19.8,19.8,2,41.7,2h173.8M215.6,0H41.7C18.7,0,0,18.7,0,41.7v446.5C0,511.3,18.7,530,41.7,530h173.8c23.1,0,41.7-18.7,41.7-41.7V41.7c0-23.1-18.7-41.7-41.7-41.7h0Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
